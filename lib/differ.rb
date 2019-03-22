@@ -41,7 +41,7 @@ module Differ
     end
 
     def format
-      return @format || Format::Ascii
+      return @format || Format::TFX
     end
 
     def format_for(f)
