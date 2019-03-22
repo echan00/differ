@@ -11,15 +11,15 @@ module Differ
 
       private
         def as_insert(change)
-          "{+#{change.insert.inspect}}"
+          {'add' => change.insert.inspect}
         end
 
         def as_delete(change)
-          "{-#{change.delete.inspect}}"
+          {'sub' => change.delete.inspect}
         end
 
         def as_change(change)
-          "{#{change.delete.inspect} >> #{change.insert.inspect}}"
+          {'sub' => change.delete.inspect, 'add' => change.insert.inspect}
         end
       end
     end
