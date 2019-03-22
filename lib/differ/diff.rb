@@ -82,7 +82,6 @@ module Differ
       end
     end
 
-  protected
     def raw_array
       @raw
     end
