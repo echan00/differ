@@ -11,15 +11,15 @@ module Differ
 
       private
         def as_insert(change)
-          {:add => change.insert.inspect}
+          {:add => change.insert.inspect.delete_prefix('"').delete_suffix('"')}
         end
 
         def as_delete(change)
-          {:sub => change.delete.inspect}
+          {:sub => change.delete.inspect.delete_prefix('"').delete_suffix('"')}
         end
 
         def as_change(change)
-          {:sub => change.delete.inspect, :add => change.insert.inspect}
+          {:sub => change.delete.inspect.delete_prefix('"').delete_suffix('"'), :add => change.insert.inspect.delete_prefix('"').delete_suffix('"')}
         end
       end
     end
