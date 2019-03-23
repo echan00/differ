@@ -11,7 +11,7 @@ module Differ
 
       private
         def as_insert(change)
-          "{+#{change.insert.inspect}}"
+          {:add => change.insert.inspect}
         end
 
         def as_delete(change)
